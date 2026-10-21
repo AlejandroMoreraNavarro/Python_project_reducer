@@ -1,0 +1,7 @@
+# Environnement virtuel Python
+venv/
+__pycache__/
+*.pyc
+
+# Clés API et configuration locale
+.env
