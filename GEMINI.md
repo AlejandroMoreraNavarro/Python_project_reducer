@@ -22,6 +22,9 @@ Spec complète : `PROJECT_SPEC.md` (à relire en entier au début de chaque nouv
    Je pousse et je fusionne moi-même. Relis le diff avant chaque commit.
 10. **Fichiers : ne supprime rien sans justification** donnée avant l'action.
 11. **Décision structurante incertaine :** pose **une** question et arrête-toi.
+12. Avant chaque action (commande, lecture, écriture), affiche une ligne : « Je vais : <action> ».
+13. Tiens à jour docs/progress.md (cases à cocher, une ligne par micro-tâche) après chaque tâche.
+14. Maximum 3 actions par message, puis stop et attends mon « continue ».
 
 ## Principes de conception (issus de l'étude préalable)
 - Sur-approximer : dans le doute, conserver. Marquer l'élément « conservé par précaution ».
