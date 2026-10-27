@@ -35,3 +35,6 @@
 
 ## Étape 3 — Application pypdf (Étape validée)
 - [x] Réduction réussie de pypdf : 319 fichiers scannés, 51 conservés (nécessaires), 208 conservés par précaution, 60 supprimés, intégrité source vérifiée par SHA-256. Rapport consigné dans `docs/pypdf_reduction_report.md`.
+
+## Étape 5 — Niveau symbole
+- [x] Micro-étape 4a : Module `symbol_analyzer.py` créé pour l'extraction AST des classes, fonctions et références, validé par test unitaire dans `tests/test_symbol_reducer.py`.
