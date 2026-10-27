@@ -56,5 +56,14 @@ result = used_func()
     assert "unused_func" not in rewritten_code
     assert "UnusedClass" not in rewritten_code
     
-    # Verify the rewritten code is syntactically valid Python
     ast.parse(rewritten_code)
+
+def test_controlled_module_dead_removal():
+    target_file = Path("tests/controlled_n1/module_with_dead.py")
+    assert target_file.exists()
+    
+    rewritten = remove_dead_symbols(target_file)
+    
+    assert "used_function" in rewritten
+    assert "strictly_dead_function" not in rewritten
+    ast.parse(rewritten)

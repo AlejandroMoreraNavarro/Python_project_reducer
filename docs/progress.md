@@ -39,3 +39,4 @@
 ## Étape 5 — Niveau symbole
 - [x] Micro-étape 4a : Module `symbol_analyzer.py` créé pour l'extraction AST des classes, fonctions et références, validé par test unitaire dans `tests/test_symbol_reducer.py`.
 - [x] Micro-étape 4b : Module `symbol_reducer.py` créé pour la réécriture et l'élimination des définitions mortes via AST (`DeadCodeRemover` + `ast.unparse`), validé par test unitaire.
+- [x] Micro-étape 4c : Module de test `module_with_dead.py` ajouté dans `tests/controlled_n1/`, test d'intégration AST validé, et suite de tests unitaires au vert (6/6 passés).
