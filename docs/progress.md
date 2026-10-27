@@ -22,3 +22,6 @@
 
 ### Général
 - [ ] Installation testée dans un venv vierge sous Windows
+
+## Étape 1 — Projet contrôlé + harnais
+- [x] Projet contrôlé N1 : `main.py`, `dead_code.py`, `test_main.py` créés et testés avec succès (`python -m pytest tests/controlled_n1/`).

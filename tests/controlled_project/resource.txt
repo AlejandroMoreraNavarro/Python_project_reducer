@@ -1,0 +1,2 @@
+config_value: 100
+enabled_feature: true
