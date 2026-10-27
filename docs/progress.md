@@ -30,7 +30,7 @@
 
 ## Étape 2 — Réducteur module-niveau (MVP)
 - [x] Micro-étape 2a : Module `reducer_core.py` (analyse statique des imports) et test unitaire `tests/test_reducer.py` validés par pytest.
+- [x] Micro-étape 2b : Fonction de réduction et copie vers `work/` avec vérification d'intégrité par hash SHA-256 et exclusion des modules non atteints, validé par test unitaire.
 - [ ] Entrées supportées : commande CLI + arguments, fonction Python `module:fonction`
-- [ ] Copie dans `work/`, original intact (vérifié par hash avant/après)
 - [ ] Rapport : conservé / supprimé / incertain, chaque conservation étiquetée « démontrée nécessaire » ou « par précaution »
 - [ ] Contrôle sur le projet contrôlé : 0 suppression erronée

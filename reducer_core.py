@@ -1,6 +1,46 @@
 import ast
+import hashlib
+import shutil
 from pathlib import Path
-from typing import Set, List, Union
+from typing import Set, List, Union, Dict
+
+def compute_dir_hash(directory: Union[str, Path]) -> Dict[str, str]:
+    """
+    Calcule un dictionnaire de hash SHA-256 pour tous les fichiers d'un répertoire.
+    """
+    root = Path(directory).resolve()
+    hashes = {}
+    for p in sorted(root.rglob("*")):
+        if p.is_file() and ".git" not in p.parts and "__pycache__" not in p.parts:
+            try:
+                hashes[p.relative_to(root).as_posix()] = hashlib.sha256(p.read_bytes()).hexdigest()
+            except Exception:
+                pass
+    return hashes
+
+def reduce_project(project_dir: Union[str, Path], entry_point: Union[str, Path], output_dir: Union[str, Path]) -> Set[Path]:
+    """
+    Copie le projet source vers un répertoire de travail en ne conservant que les fichiers
+    atteignables par analyse statique des imports.
+    """
+    root = Path(project_dir).resolve()
+    out = Path(output_dir).resolve()
+    if out.exists():
+        shutil.rmtree(out)
+    out.mkdir(parents=True, exist_ok=True)
+    
+    reachable = find_reachable_modules(root, entry_point)
+    
+    copied = set()
+    for src_path in reachable:
+        if src_path.exists() and src_path.is_relative_to(root):
+            rel = src_path.relative_to(root)
+            dest_path = out / rel
+            dest_path.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src_path, dest_path)
+            copied.add(dest_path)
+            
+    return copied
 
 def find_reachable_modules(project_dir: Union[str, Path], entry_point: Union[str, Path]) -> Set[Path]:
     """
