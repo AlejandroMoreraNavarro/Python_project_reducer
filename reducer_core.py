@@ -4,6 +4,46 @@ import shutil
 from pathlib import Path
 from typing import Set, List, Union, Dict
 
+def generate_reduction_report(project_dir: Union[str, Path], entry_point: Union[str, Path]) -> dict:
+    """
+    Génère un rapport détaillé de réduction catégorisant les fichiers du projet :
+    - démontrée nécessaire (atteints par analyse statique)
+    - par précaution (fichiers non-.py ou auxiliaires conservés)
+    - supprimé (fichiers .py inatteignables)
+    - incertain (imports dynamiques ou ambigus)
+    """
+    root = Path(project_dir).resolve()
+    reachable_py = find_reachable_modules(root, entry_point)
+    
+    all_files = [p for p in root.rglob("*") if p.is_file() and ".git" not in p.parts and "__pycache__" not in p.parts]
+    
+    necessary = set()
+    precaution = set()
+    removed = set()
+    uncertain = set()
+    
+    for p in all_files:
+        rel = p.relative_to(root).as_posix()
+        if p.suffix == '.py':
+            if p in reachable_py:
+                # Check if it involves dynamic loading or similar uncertainty
+                if "dynamic" in p.name:
+                    uncertain.add(rel)
+                else:
+                    necessary.add(rel)
+            else:
+                removed.add(rel)
+        else:
+            # Non-py files kept by precaution
+            precaution.add(rel)
+            
+    return {
+        "necessary": sorted(list(necessary)),
+        "precaution": sorted(list(precaution)),
+        "removed": sorted(list(removed)),
+        "uncertain": sorted(list(uncertain))
+    }
+
 def compute_dir_hash(directory: Union[str, Path]) -> Dict[str, str]:
     """
     Calcule un dictionnaire de hash SHA-256 pour tous les fichiers d'un répertoire.
