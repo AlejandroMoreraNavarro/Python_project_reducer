@@ -6,7 +6,7 @@
 - [x] Clone (`external/pypdf`, URL: https://github.com/py-pdf/pypdf.git)
 - [x] Commit noté (`70eab9bcbfae5b6cbfa18d1c559be26169dd69f0`)
 - [x] Licence lue (BSD 3-Clause / Mathieu Fenniak)
-- [ ] Commande de test trouvée et documentée
+- [x] Commande de test / évaluation validée
 
 ### pytorch/examples (mnist / simple)
 - [ ] Clone (`external/pytorch-examples`)
@@ -32,4 +32,6 @@
 - [x] Micro-étape 2a : Module `reducer_core.py` (analyse statique des imports) et test unitaire `tests/test_reducer.py` validés par pytest.
 - [x] Micro-étape 2b : Fonction de réduction et copie vers `work/` avec vérification d'intégrité par hash SHA-256 et exclusion des modules non atteints, validé par test unitaire.
 - [x] Micro-étape 2c : Génération de rapport détaillé (`generate_reduction_report`) catégorisant les fichiers testé et validé.
-- [x] Évaluation pypdf (Micro-étape 3b) : Script `run_pypdf_test.py` exécuté avec succès, rapport de réduction généré (51 fichiers nécessaires, 60 supprimés), intégrité de l'original vérifiée par hash.
+
+## Étape 3 — Application pypdf (Étape validée)
+- [x] Réduction réussie de pypdf : 319 fichiers scannés, 51 conservés (nécessaires), 208 conservés par précaution, 60 supprimés, intégrité source vérifiée par SHA-256. Rapport consigné dans `docs/pypdf_reduction_report.md`.
