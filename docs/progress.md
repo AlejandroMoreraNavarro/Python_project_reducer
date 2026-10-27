@@ -24,4 +24,13 @@
 - [ ] Installation testée dans un venv vierge sous Windows
 
 ## Étape 1 — Projet contrôlé + harnais
-- [x] Projet contrôlé N1 : `main.py`, `dead_code.py`, `test_main.py` créés et testés avec succès (`python -m pytest tests/controlled_n1/`).
+- [x] Projet contrôlé : modules indépendants, partagés, imports dynamiques, registre/décorateur, ressource, dépendance optionnelle (`tests/controlled_project/`)
+- [x] Harnais : exécute la commande de référence sur l'original et la copie, compare les sorties et erreurs (`harness.py`)
+- [x] Test méta : le harnais détecte avec succès au moins 3 régressions injectées volontairement (3/3 détectées, Gate validée)
+
+## Étape 2 — Réducteur module-niveau (MVP)
+- [x] Micro-étape 2a : Module `reducer_core.py` (analyse statique des imports) et test unitaire `tests/test_reducer.py` validés par pytest.
+- [ ] Entrées supportées : commande CLI + arguments, fonction Python `module:fonction`
+- [ ] Copie dans `work/`, original intact (vérifié par hash avant/après)
+- [ ] Rapport : conservé / supprimé / incertain, chaque conservation étiquetée « démontrée nécessaire » ou « par précaution »
+- [ ] Contrôle sur le projet contrôlé : 0 suppression erronée
