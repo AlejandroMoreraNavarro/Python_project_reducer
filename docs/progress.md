@@ -36,7 +36,8 @@
 ## Étape 3 — Application pypdf (Étape validée)
 - [x] Réduction réussie de pypdf : 319 fichiers scannés, 51 conservés (nécessaires), 208 conservés par précaution, 60 supprimés, intégrité source vérifiée par SHA-256. Rapport consigné dans `docs/pypdf_reduction_report.md`.
 
-## Étape 5 — Niveau symbole
+## Étape 5 — Niveau symbole & CLI
 - [x] Micro-étape 4a : Module `symbol_analyzer.py` créé pour l'extraction AST des classes, fonctions et références, validé par test unitaire dans `tests/test_symbol_reducer.py`.
 - [x] Micro-étape 4b : Module `symbol_reducer.py` créé pour la réécriture et l'élimination des définitions mortes via AST (`DeadCodeRemover` + `ast.unparse`), validé par test unitaire.
-- [x] Micro-étape 4c : Module de test `module_with_dead.py` ajouté dans `tests/controlled_n1/`, test d'intégration AST validé, et suite de tests unitaires au vert (6/6 passés).
+- [x] Micro-étape 4c : Module de test `module_with_dead.py` ajouté dans `tests/controlled_n1/`, test d'intégration AST validé.
+- [x] Micro-étape 5a : Script CLI `cli.py` créé combinant réduction module-niveau et élagage symbole, validé par test d'intégration dans `tests/test_cli.py` (7/7 tests unitaires au vert).
