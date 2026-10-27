@@ -5,7 +5,7 @@
 ### pypdf
 - [x] Clone (`external/pypdf`, URL: https://github.com/py-pdf/pypdf.git)
 - [x] Commit noté (`70eab9bcbfae5b6cbfa18d1c559be26169dd69f0`)
-- [ ] Licence lue
+- [x] Licence lue (BSD 3-Clause / Mathieu Fenniak)
 - [ ] Commande de test trouvée et documentée
 
 ### pytorch/examples (mnist / simple)
