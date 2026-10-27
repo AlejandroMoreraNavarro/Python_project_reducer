@@ -4,6 +4,7 @@ __pycache__/
 *.pyc
 external/
 work/
+envs/
 
 # Clés API et configuration locale
 .env
