@@ -27,3 +27,9 @@
 - [x] Micro-étape 5a : Script CLI `cli.py` créé combinant réduction module-niveau et élagage symbole, validé par test d'intégration dans `tests/test_cli.py`.
 - [x] Micro-étape 5b : Validation finale, mise à jour du README et de la documentation de progression.
 - [x] Micro-étape 3-Alternative / Validation V1 : Nettoyage environnement temporaire, test CLI complet avec élagage de symboles validé sur le projet contrôlé. V1 achevée, documentée et prête pour le merge vers main.
+
+## Étape V2 — Filtrage par fonctionnalité / intention
+- [x] V2-1 : Feuille de route V2 (`docs/roadmap_v2.md`) et projet de test contrôlé V2 (`tests/controlled_v2/`).
+- [x] V2-2 : Module d'analyse d'intention (`intent_analyzer.py`) et tests unitaires associés.
+- [x] V2-3 & V2-4 : Réducteur orienté intention (`intent_reducer.py`) et test d'intégration E2E validant l'exclusion de `feature_b` et la conservation fonctionnelle de `feature_a`.
+- [x] V2-5 : Finalisation, validation de l'ensemble des tests V1 et V2 (8/8 passés). V2 officiellement achevée.
