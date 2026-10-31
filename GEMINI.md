@@ -16,9 +16,15 @@ Spec complète : `PROJECT_SPEC.md` (à relire en entier au début de chaque nouv
 5. **Avant d'affirmer qu'un test passe, exécute-le** et cite la commande et le résumé réel de la sortie.
 6. **Un test qui échoue se corrige dans le code, jamais en supprimant ou affaiblissant le test.**
 7. **Une étape à la fois.** Fin d'étape : résumé (fait / tests exécutés / limites), mise à jour de `docs/roadmap.md`, commit git local. Puis STOP, attends ma validation.
-8. **Git : commits locaux uniquement.** Pas de `git push`. Relis le diff avant chaque commit.
-9. **Fichiers : ne supprime rien sans justification** donnée avant l'action.
-10. **Décision structurante incertaine :** pose **une** question et arrête-toi.
+8. Ne jamais committer sur `main`. Vérifie la branche courante (`git branch --show-current`)
+   avant tout commit ; si c'est `main`, arrête-toi et préviens-moi.
+9. **Git : commits locaux uniquement.** Ne jamais exécuter `git push`, `git merge`, `git rebase`, ni `git reset --hard`.
+   Je pousse et je fusionne moi-même. Relis le diff avant chaque commit.
+10. **Fichiers : ne supprime rien sans justification** donnée avant l'action.
+11. **Décision structurante incertaine :** pose **une** question et arrête-toi.
+12. Avant chaque action (commande, lecture, écriture), affiche une ligne : « Je vais : <action> ».
+13. Tiens à jour docs/progress.md (cases à cocher, une ligne par micro-tâche) après chaque tâche.
+14. Maximum 3 actions par message, puis stop et attends mon « continue ».
 
 ## Principes de conception (issus de l'étude préalable)
 - Sur-approximer : dans le doute, conserver. Marquer l'élément « conservé par précaution ».
