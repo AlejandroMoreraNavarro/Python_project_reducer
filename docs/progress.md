@@ -26,3 +26,4 @@
 - [x] Micro-étape 4c : Module de test `module_with_dead.py` ajouté dans `tests/controlled_n1/`, test d'intégration AST validé.
 - [x] Micro-étape 5a : Script CLI `cli.py` créé combinant réduction module-niveau et élagage symbole, validé par test d'intégration dans `tests/test_cli.py`.
 - [x] Micro-étape 5b : Validation finale, mise à jour du README et de la documentation de progression.
+- [x] Micro-étape 3-Alternative / Validation V1 : Nettoyage environnement temporaire, test CLI complet avec élagage de symboles validé sur le projet contrôlé. V1 achevée, documentée et prête pour le merge vers main.

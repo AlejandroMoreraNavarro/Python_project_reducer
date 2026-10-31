@@ -1,6 +1,6 @@
-# Python Project Reducer
+# Python Project Reducer — Version 1 (V1)
 
-`python-project-reducer` est un outil d'analyse statique et de réduction de projets Python (élimination de modules non utilisés et élagage de code mort au niveau des symboles via AST) conçu pour alléger des bases de code sans compromettre leur intégrité fonctionnelle.
+`python-project-reducer` est un outil d'analyse statique et de réduction de projets Python (**Version 1 - V1**, centrée sur l'analyse statique module-niveau et l'élagage symbolique par AST) conçu pour alléger des bases de code sans compromettre leur intégrité fonctionnelle.
 
 ## Architecture de l'outil
 
