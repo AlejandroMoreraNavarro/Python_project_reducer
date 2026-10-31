@@ -1,9 +1,16 @@
-# Environnement virtuel Python
+# Environnements virtuels Python
 venv/
+.venv/
+envs/
+
+# Caches Python et tests
 __pycache__/
 *.pyc
-external/
+.pytest_cache/
+
+# Dossiers de travail et externes (ignorés par git)
 work/
+external/
 
 # Clés API et configuration locale
 .env
